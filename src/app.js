@@ -13,7 +13,7 @@ const temp=require('./utils/temp')
 // console.log(__filename)
 // console.log(path.join(__dirname,'../public'))								//.. means up a folder
 const app=express()
-
+const port=process.env.PORT || 3000
 
 
 //define paths for express config
@@ -170,7 +170,7 @@ app.get('*', (req, res) => {
     })
 })
 
-app.listen(3000,()=>{
+app.listen(port,()=>{
 	console.log("server started")
 })
 
