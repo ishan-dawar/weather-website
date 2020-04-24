@@ -77,6 +77,46 @@ app.get('/help',(req,res)=>{
 // })
 
 
+// app.get ("/weather",(req,res)=>{
+
+// 	if(!req.query.search){
+// 		return res.send({
+// 			error:'enter address'
+// 		})
+// 	}
+// 	else{
+
+
+// 		loc(req.query.search,(error,{latitude,longitude}={})=>{  
+// 	if(error){
+// 		return res.send({error})
+// 	}
+
+
+// 	temp(latitude,longitude, (error,data2)=>{
+// 	if(error){
+// 		return res.send({error})
+// 	}
+
+// 	res.send(data2)
+	
+// })
+
+// })
+// 	}
+// 	})
+
+
+
+
+
+
+
+app.get('/about',(req,res)=>{
+	res.send("<h1>about</h1>")
+})
+
+
 app.get ("/weather",(req,res)=>{
 
 	if(!req.query.search){
@@ -87,13 +127,13 @@ app.get ("/weather",(req,res)=>{
 	else{
 
 
-		loc(req.query.search,(error,{latitude,longitude}={})=>{  
-	if(error){
-		return res.send({error})
-	}
+	// 	loc(req.query.search,(error,{data2}={})=>{  
+	// if(error){
+	// 	return res.send({error})
+	// }
 
 
-	temp(latitude,longitude, (error,data2)=>{
+	loc(req.query.search, (error,data2)=>{
 	if(error){
 		return res.send({error})
 	}
@@ -102,9 +142,16 @@ app.get ("/weather",(req,res)=>{
 	
 })
 
+}
 })
-	}
-	})
+// )
+// 	}
+// 	})
+
+
+
+
+
 	// console.log(req.query.address)
 // 	res.send([{
 // 		address:req.query.address,

@@ -15,7 +15,12 @@ const url='http://api.weatherstack.com/current?access_key=462fe5b632857e215140c3
 		}else{
 			callback('',{
 				latitude: body.location.lat,
-				longitude: body.location.lon
+				longitude: body.location.lon,
+				loaction: body.location.name,
+			temperature: body.current.temperature,
+			rain: body.current.precip,
+			wind_speed: body.current.wind_speed,
+			humidity: body.current.humidity
 			})   
 		}
 		
